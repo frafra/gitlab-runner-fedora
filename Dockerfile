@@ -7,7 +7,7 @@ ENV GITLAB_RUNNER_DATA_DIR="${GITLAB_RUNNER_HOME_DIR}/data"
 ENV TERM xterm
 
 RUN echo -e 'tsflags=nodocs\ndeltarpm=0' >> /etc/dnf/dnf.conf \
- && dnf install -v -y git sudo wget which hostname \
+ && dnf install -v -y git sudo wget which hostname podman buildah \
  && dnf clean all && rm -rf /usr/share/doc /usr/share/man /tmp/*
 
 COPY assets/install.sh /var/cache/gitlab-runner/install.sh
